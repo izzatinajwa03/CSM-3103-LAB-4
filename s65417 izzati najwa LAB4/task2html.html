@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Functions</title>
+<script>
+  //Function to find the sum of digits of a number:
+  function sumOfDigits(number) {
+    if (number === 0) {
+      return 0;
+    } else {
+      return (number % 10) + sumOfDigits(Math.floor(number / 10));
+    }
+  }
+
+  //Function to compute x raised to the power y using recursion:
+  function power(x, y) {
+    if (y === 0) {
+      return 1;
+    } else {
+      return x * power(x, y - 1);
+    }
+  }
+
+  // Testing the functions
+  function testFunctions() {
+    var number = 57786;
+    var x = 2;
+    var y = 3;
+
+    var sumDigits = sumOfDigits(number);
+    var xPowerY = power(x, y);
+
+    document.getElementById("output").innerHTML = "Sum of digits of " + number + ": " + sumDigits + "<br>";
+    document.getElementById("output").innerHTML += x + " raised to the power " + y + ": " + xPowerY;
+  }
+</script>
+</head>
+<body>
+
+<button onclick="testFunctions()">Test Functions</button>
+<div id="output"></div>
+
+</body>
+</html>

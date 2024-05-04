@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Table Manipulation</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+</head>
+<body>
+
+<table id="myTable">
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Ahmad Faisal</td>
+        <td>ahmadfaisal@gmail.com</td>
+        <td>0199088888</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Ismail Sabri</td>
+        <td>isabri@mail.com</td>
+        <td>0199076760</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Fateh Yakin</td>
+        <td>ffateh@hotmail.com</td>
+        <td>0176067762</td>
+    </tr>
+</table>
+
+<script>
+    
+    function addRecord() {
+        var table = document.getElementById("myTable");
+        var newRow = table.insertRow(-1);
+        var data = [
+            "4",
+            "Mukhriz Jamil Asoka",
+            "mukriz@corp.jo",
+            "651181187223"
+        ];
+
+        for (var i = 0; i < data.length; i++) {
+            var cell = newRow.insertCell(i);
+            cell.innerHTML = data[i];
+        }
+    }
+
+    function addTableHeader() {
+        var table = document.getElementById("myTable");
+        var header = table.createTHead();
+        var row = header.insertRow(0);
+        var headers = ["#", "Name", "Email", "Phone"];
+
+        for (var i = 0; i < headers.length; i++) {
+            var cell = row.insertCell(i);
+            cell.innerHTML = headers[i];
+        }
+    }
+
+    function deleteRow(row) {
+        var i = row.parentNode.parentNode.rowIndex;
+        document.getElementById('myTable').deleteRow(i);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var table = document.getElementById('myTable');
+        var rows = table.getElementsByTagName('tr');
+        for (var i = 0; i < rows.length; i++) {
+            rows[i].addEventListener('click', function () {
+                deleteRow(this);
+            });
+        }
+    });
+</script>
+
+<button onclick="addRecord()">Add Record</button>
+<button onclick="addTableHeader()">Add Table Header</button>
+
+</body>
+</html>

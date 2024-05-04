@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Object Properties Display</title>
+</head>
+<body>
+
+    <button onclick="testFunctions()">Test Functions</button>
+<div id="output"></div>
+
+<script>
+  // 1) Creating the product object
+  var product = {
+    productName: "WAWA CRUNCHY",
+    quantity: 10,
+    price: 50
+  };
+
+  // Accessing and displaying properties
+  document.write("<h2>Product Object</h2>");
+  document.write("Product Name: " + product.productName + "<br>");
+  document.write("Quantity: " + product.quantity + "<br>");
+  document.write("Price: " + product.price + "<br><br>");
+
+  // 2) Creating the book object
+  var book = {
+    bookName: "DR ALPHAMALE",
+    authorName: "Anjell"
+  };
+
+  // Adding prototype property price
+  book.__proto__.price = 100;
+
+  // Displaying all properties
+  document.write("<h2>Book Object</h2>");
+  document.write("Book Name: " + book.bookName + "<br>");
+  document.write("Author Name: " + book.authorName + "<br>");
+  document.write("Price: " + book.price + "<br><br>");
+
+  // 3) Creating the employee object
+  var employee = {
+    employeeName: "Izzati Najwa",
+    employeeId: 65417,
+    salary: 50000
+  };
+
+  // Creating the manager object inheriting from employee
+  var manager = Object.create(employee);
+  manager.managerName = "Mohd Bakhri Mat Hasan";
+  manager.branch = "BASF Petronas";
+
+  // Displaying all properties
+  document.write("<h2>Manager Object</h2>");
+  document.write("Employee Name: " + manager.employeeName + "<br>");
+  document.write("Employee ID: " + manager.employeeId + "<br>");
+  document.write("Salary: " + manager.salary + "<br>");
+  document.write("Manager Name: " + manager.managerName + "<br>");
+  document.write("Branch: " + manager.branch + "<br>");
+</script>
+
+</body>
+</html>

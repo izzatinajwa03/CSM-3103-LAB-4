@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TextField Effects</title>
+<style>
+  
+  #myTextField {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none; 
+  }
+  
+  #myTextField:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+  }
+  
+  #myTextField:blur {
+    background-color: #f8d7da; 
+    border-color: #dc3545; 
+  }
+</style>
+</head>
+<body>
+
+<input type="text" id="myTextField" placeholder="Type here..." onchange="onChange()" onfocus="onFocus()" onblur="onBlur()">
+
+<script>
+  // Function to apply effect on change event
+  function onChange() {
+    alert("Text field value changed!");
+  }
+
+  // Function to apply effect on focus event
+  function onFocus() {
+    document.getElementById("myTextField").style.backgroundColor = "#e2f3ff"; 
+  }
+
+  // Function to apply effect on blur event
+  function onBlur() {
+    document.getElementById("myTextField").style.backgroundColor = "#ffffff"; 
+  }
+</script>
+
+</body>
+</html>

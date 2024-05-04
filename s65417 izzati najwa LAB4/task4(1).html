@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Manager - Paragraph</title>
+<style>
+  p {
+    padding: 20px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<p id="myParagraph">Click Me!</p>
+
+<script>
+  
+  var paragraph = document.getElementById("myParagraph");
+
+  paragraph.onclick = function() {
+    paragraph.style.backgroundColor = "yellow";
+  };
+
+  paragraph.ondblclick = function() {
+    paragraph.style.backgroundColor = "blue";
+  };
+
+  paragraph.onmouseover = function() {
+    paragraph.style.backgroundColor = "red";
+  };
+
+  paragraph.onmouseout = function() {
+    paragraph.style.backgroundColor = "green";
+  };
+</script>
+
+</body>
+</html>
+

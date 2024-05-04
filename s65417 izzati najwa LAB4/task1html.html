@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Functions</title>
+<script>
+  // 1. Function to find the square of a given number
+  function square(num) {
+    return num * num;
+  }
+
+  // 2. Function to find sum of cubes of two numbers
+  function sumOfCubes(num1, num2) {
+    var cube1 = num1 * num1 * num1;
+    var cube2 = num2 * num2 * num2;
+    return cube1 + cube2;
+  }
+
+  // 3. Function to reverse a number
+  function reverseNumber(number) {
+    var reversed = 0;
+    while (number > 0) {
+      reversed = (reversed * 10) + (number % 10);
+      number = Math.floor(number / 10);
+    }
+    return reversed;
+  }
+
+  // 4. Function to print all numbers between 1 and 100 divisible by a given number z
+  function printDivisibleByZ(z) {
+    var result = [];
+    for (var i = 1; i <= 100; i++) {
+      if (i % z === 0) {
+        result.push(i);
+      }
+    }
+    return result.join(', ');
+  }
+  
+</script>
+</head>
+<body>
+    <button onclick="testFunctions()">Test Functions</button>
+<div id="output"></div>
+<script>
+  // Testing the functions
+  document.write("Square of 5: " + square(5) + "<br>");
+  document.write("Sum of cubes of 2 and 3: " + sumOfCubes(2, 3) + "<br>");
+  document.write("Reverse of 12345: " + reverseNumber(12345) + "<br>");
+  document.write("Numbers between 1 and 100 divisible by 7: " + printDivisibleByZ(7));
+</script>
+</body>
+</html>
